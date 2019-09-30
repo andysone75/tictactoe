@@ -1,0 +1,29 @@
+{
+	"mainPage": [
+		"PVP", "PVE"
+	],
+	"pve": [
+		"High Score: ",
+		"Go!",
+		"You loose",
+		"RESTART",
+		"MAIN PAGE",
+		"Do you really want to return to the main page?",
+		"YES",
+		"NO",
+		"Second Chance",
+		"Short Video",
+		"Long Video",
+		"Deny"
+	],
+	"pvp": [
+		"TURN",
+		"Winner: ",
+		"MAIN PAGE",
+		"RESTART",
+		"Do you really want to return to the main page?",
+		"YES",
+		"NO"
+	]
+
+}
