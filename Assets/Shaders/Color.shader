@@ -3,7 +3,6 @@ Shader "TicTacToe/Sprite Color"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Color ("Color", Color) = (1,1,1,1)
     }
     SubShader
     {
@@ -27,23 +26,25 @@ Shader "TicTacToe/Sprite Color"
             struct appdata
             {
                 float4 vertex : POSITION;
+                float4 color : COLOR;
                 float2 uv : TEXCOORD0;
             };
 
             struct v2f
             {
-                float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
+                float4 color : COLOR;
+                float2 uv : TEXCOORD0;
             };
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            fixed4 _Color;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
+                o.color = v.color;
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
             }
@@ -52,7 +53,7 @@ Shader "TicTacToe/Sprite Color"
             {
                 // sample the texture
                 fixed alpha = tex2D(_MainTex, i.uv).a;
-                fixed4 col = _Color * alpha;
+                fixed4 col = i.color * alpha;
                 return col;
             }
             ENDCG
