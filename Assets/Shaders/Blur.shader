@@ -58,9 +58,9 @@ Shader "TicTacToe/Blur Sprite"
             static float Directions = 16.0          ; // Blur Directions (Default 16.0 - More is better but slower)
             static float Quality    = 3.0           ; // Blur Quality (Default 4.0 - More is better but slower)
 
-            fixed4 frag (v2f i) : SV_Target
+            float4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_BackgroundTexture, i.grabPos);
+                float4 col = tex2D(_BackgroundTexture, i.grabPos);
                 float2 Radius = _Size / _ScreenParams.xy;
 
                 for (float d = 0.0; d < PI; d += PI / Directions)

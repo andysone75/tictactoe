@@ -4,10 +4,11 @@ using UnityEngine;
 public class Options : MonoBehaviour
 {
     public bool IsActive { get; private set; } = false;
+    public static bool Block = true;
 
     public void Show()
     {
-        if (IsActive)
+        if (IsActive || Block)
             return;
 
         var animation = GetComponent<Animation>();
@@ -18,7 +19,7 @@ public class Options : MonoBehaviour
 
     public void Hide()
     {
-        if (!IsActive)
+        if (!IsActive || Block)
             return;
 
         var animation = GetComponent<Animation>();

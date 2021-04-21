@@ -59,6 +59,7 @@ public class MainPage : MonoBehaviour
         canvas.Play("Start");
         yield return new WaitForSeconds(8);
         field.GetComponent<BotGame>().StartGame();
+        Options.Block = false;
     }
 
     public static void SetGameVolume()
