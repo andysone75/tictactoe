@@ -137,7 +137,7 @@ public class PVE : MonoBehaviour
         if (score > HighScore)
         {
             HighScore = score;
-            highScoreTxt.text = "Рекорд: " + HighScore.ToString();
+            highScoreTxt.text = LangSystem.lng.pve[0] + HighScore.ToString();
         }
         loseAudio.Play();
     }

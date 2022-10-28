@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
     public static bool fromMainPage = true;
     public static Color theme;
 
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     public static void StartPVP () { SceneManager.LoadScene("PVP"); }
     public static void StartPVE()  { SceneManager.LoadScene("PVE"); }
     public static void GoToMainPage ()
